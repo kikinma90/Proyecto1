@@ -26,8 +26,8 @@ public class GameController implements GameApi{
     }
 
     @Override
-    public ResponseEntity<GameModel> updateGame(Long gameId) {
-        return ResponseEntity.ok(gameService.updateGame(gameId));
+    public ResponseEntity<GameModel> updateGame(Long gameId, GameModel gameRequest) {
+        return ResponseEntity.ok(gameService.updateGame(gameId, gameRequest));
     }
 
     @Override

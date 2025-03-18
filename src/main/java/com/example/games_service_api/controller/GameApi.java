@@ -20,7 +20,8 @@ public interface GameApi {
 
     @PutMapping(value = "/{gameId}")
     ResponseEntity<GameModel> updateGame(
-            @PathVariable Long gameId
+            @PathVariable Long gameId,
+            @RequestBody GameModel gameRequest
     );
 
     @DeleteMapping(value = "/{gameId}")

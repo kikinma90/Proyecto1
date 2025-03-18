@@ -32,12 +32,12 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public GameModel updateGame(Long gameId) {
-        return Optional.of(gameId)
-                .flatMap(gameRepository::findById)
+    public GameModel updateGame(Long gameId, GameModel gameRequest) {
+        deleteGame(gameId);
+        return Optional.of(gameRequest)
                 .map(this::mapToEntity)
                 .map(gameRepository::save)
-                .orElseThrow(() -> new RuntimeException("Error couldn't update game by id"));
+                .orElseThrow(() -> new RuntimeException("Error update game"));
     }
 
     @Override

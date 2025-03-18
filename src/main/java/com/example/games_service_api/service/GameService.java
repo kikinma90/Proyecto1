@@ -7,7 +7,7 @@ public interface GameService {
 
     GameModel getGame(Long gameId);
 
-    GameModel updateGame(Long gameId);
+    GameModel updateGame(Long gameId, GameModel gameRequest);
 
     GameModel deleteGame(Long gameId);
 }
